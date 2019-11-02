@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/fontawesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Creepster&display=swap" rel="stylesheet">
     <style>
 
     </style>
@@ -22,64 +23,48 @@
                 <div class="logo">
                     <h1>
                         <a href="./../index.html">
-                            <span id="headM">M</span>manga
+                            <span id="headM rotate">M</span>manga
                         </a>
                     </h1>
                 </div>
                 <input class="search" type="text" placeholder="Введите что-то для поиска...">
-                <ul class="topmenu">
-                    <li class="down"><a href="#" class="catalog">Каталог </a>
-                        <!-- <ul class="submenu">
-                            <li><a href="#">Коллекции</a></li>
-                            <li><a href="#">Популярное</a></li>
-                            <li><a href="#">Жанры</a></li> 
-                        </ul>  -->
-                    </li>
-                    <li><a href="#">Новости</a></li>
-                    <li><a href="#">Новики</a></li>
-                    <li><a href="#">Избранное</a></li>
-                </ul>
             </nav>
         </div>
     </header>
 
     <section>
+        <!-- <div class="mangaBlock"> -->
         <div class="container">
-            <!-- <div class="headInfo">\
-                <div>
-                    <h1>HeadText</h1>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum magni non ipsum corporis enim? Non quo animi laborum est. Nihil sequi voluptatum amet dolores. 
-                    </p>
-                </div>
-            </div> -->
-            <div class="popular">
-                <h2>Популярное за неделю <a class="readMore">more &rarr;</a></h2>
-                <div class="popGrid">
-                    <div id="popularGrid">
-                        <div><a href="#"><img src="./img/Posters/blackClover.jpg" alt=""></a></div>
-                        <div><a href="#"><img src="./img/Posters/SeraphEnd.jpg" alt=""></a></div>
-                        <div><a href="#"><img src="./img/Posters/myHeroAcademy.jpg" alt=""></a></div>
-                        <div><a href="#"><img src="./img/Posters/soloLevelingPoster.jpg" alt=""></a></div>
-                        <div><a href="#"><img src="./img/Posters/TODGposter.jpg" alt=""></a></div>
-                        <div><a href="./manga/onePiece.html"><img src="./img/Posters/onePiecePoster.jpg" alt=""></a>
+            <div class="inContainer">
+                <div class="popular">
+                    <div class="popGrid">
+                        <div id="popularGrid">
+                            <div><a href="./manga/blackClover.html"><img src="./img/Posters/blackClover.jpg" alt=""></a></div>
+                            <div><a href="./manga/SeraphOfTheEnd.html"><img src="./img/Posters/SeraphEnd.jpg" alt=""></a></div>
+                            <div><a href="./manga/MyHeroAcademy.html"><img src="./img/Posters/myHeroAcademy.jpg" alt=""></a></div>
+                            <div><a href="./manga/LevelingSolo.html"><img src="./img/Posters/soloLevelingPoster.jpg" alt=""></a></div>
+                            <div><a href="./manga/TODG.html"><img src="./img/Posters/TODGposter.jpg" alt=""></a></div>
+                            <div><a href="./manga/onePiece.html"><img src="./img/Posters/onePiecePoster.jpg" alt=""></a>
+                            </div>
+                            <div><a href="./manga/FairyTail.html"><img src="./img/Posters/fairyTail100.jpg" alt=""></a></div>
+                            <div><a href="./manga/Naruto.html"><img src="./img/Posters/narutoPoster.jpg" alt=""></a></div>
                         </div>
-                        <div><a href="#"><img src="./img/Posters/fairyTail100.jpg" alt=""></a></div>
-                        <div><a href="#"><img src="./img/Posters/narutoPoster.jpg" alt=""></a></div>
                     </div>
                 </div>
             </div>
 
+        </div>
+        <!-- </div> -->
+
+        <div class="container">
             <div class="news">
                 <h2>Новости <a href="#" class="readMore">more &rarr;</a></h2>
                 <div class="newsBlock">
-                   
-                    
+
+
                 </div>
             </div>
         </div>
-
-
     </section>
 
     <footer>
@@ -98,8 +83,39 @@
 
     </footer>
 
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <div class="modal" id="modal" aria-hidden="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog">
+      <button class="close-button" id="close-button" title="Закрыть модальное окно">&#10006;</button>
+      <div class="modal-guts" role="document">
+        <h1>Happy Howl-o-ween!</h1>
+        <img class="uraraChan" src="./../img/Urara.png" alt="">  
+        <img class="modalWitch" src="./../img/witch1.png" alt="">  
+        <!-- <img src="./../img/bats.png" alt="">            -->
+      </div>
+    </div>
+    <img class="witch1 open-button" id="open-button" src="./../img/witcher.png" alt="">
+    
+        <script>
+            var modal = document.querySelector("#modal"),
+                modalOverlay = document.querySelector("#modal-overlay"),
+                closeButton = document.querySelector("#close-button"),
+                openButton = document.querySelector("#open-button");
+    
+        closeButton.addEventListener("click", function() {
+          modal.classList.toggle("closed");
+          modalOverlay.classList.toggle("closed");
+        });
+    
+        openButton.addEventListener("click", function() {
+          modal.classList.toggle("closed");
+          modalOverlay.classList.toggle("closed");
+        });
+    
+        </script>
+
+    <script src="./js/news.js"></script>
     <script src="./js/script.js"></script>
-    <script src="./js/mangaPageScript.js"></script>
 </body>
 
 </html>

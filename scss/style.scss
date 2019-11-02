@@ -1,14 +1,30 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
-* {
-    transition: 1s;
-    box-sizing: border-box;
+@font-face {
+    font-family: Pumpkin;
+    src: url('./../fonts/Pumpkin\ Halloween\ St.ttf');
 }
+
+@font-face {
+    font-family: Haloweb;
+    src: url('./../fonts/Halloweb.otf');
+}
+
+@font-face {
+    font-family: Zombie;
+    src: url('./../fonts/Zombie_Holocaust.ttf')
+}
+
+* {}
 
 body {
     margin: 0;
     padding: 0;
+    background: url(./../img/halloweenBG.jpg) 100% 100% no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+
 }
 
 ul {
@@ -17,85 +33,53 @@ ul {
 
 a {
     text-decoration: none;
-    // color: white;
+
 }
 
 header {
+    margin-bottom: -15px;
 
-    // background: url(./../img/headPhones1920x1080.jpg) no-repeat center top / cover;
+    * {
+        color: black;
+    }
+
+    .container {
+        background: transparent;
+        padding-bottom: 30px;
+    }
 }
 
 .container {
     // border: dashed black 1px;
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 1000px;
+    background: rgba($color: white, $alpha: 0.9);
 
     nav {
         @include grid(row);
         padding: 0 30px;
-        margin-bottom: -23px;
-
-        .topmenu {
-            display: flex;
-            justify-content: space-between;
-            padding: 0;
-
-            ul {
-                position: relative;
-
-            }
-            > li {
-                letter-spacing: 4px;
-                font-size: 1.4em;
-                color: black;
-                box-sizing: content-box;
-
-                a {
-                    color: $navColor;
-                    transition: 0.5s;
-
-                    &:hover {
-                        transition: border-bottom 1s, color 0.2s;
-                        // text-decoration: underline;
-                        border-bottom: solid 1px #d96464;
-                        color: rgba($color: #d96464, $alpha: 0.6)
-                    }
-                } 
-            }
-
-            
-        }
     }
 }
 
-.down:hover > ul, .submenu:hover {
-    display: block;
-    color: #d96464;
-
-    background-color: rgba($color: #457dd1, $alpha: 0.8);
-
-}
-
-.submenu {
-    position: absolute;
-    left: 0;
-    display: none;
-    text-align: start;
-    width: 200px;
-    padding: 10px;
-    padding-left: 2px;
-    border-radius: 0 0 5px 3px;
+.inContainer {
+    margin: 0 auto;
+    max-width: 900px;
+    padding-bottom: 50px;
+    ;
 }
 
 .logo {
+    position: relative;
+    padding-top: 5px;
     align-items: center;
     height: 76px;
     margin-bottom: 15px;
     @include grid(column);
     text-align: center;
-    font-size: 2em;
+    font-size: 2.4em;
     cursor: pointer;
-    // color: white;
+    font-family: Haloweb;
+    padding-bottom: 10px;
 
 
     h1 {
@@ -104,12 +88,16 @@ header {
 
 
     span {
+        margin-top: 10px;
+        letter-spacing: 1px;
         font-size: 1.2em;
         font-weight: bold;
-
-        color: #457dd1;
+        font-family: Pumpkin, 'Creepster';
+        color: #872c1c;
     }
 }
+
+
 
 .search {
     border: solid 2px rgba($color: #000000, $alpha: 0.6);
@@ -123,10 +111,12 @@ header {
     }
 }
 
+.popular {
+    padding-top: 30px;
+}
 
 .popGrid {
     width: 100%;
-
 }
 
 #popularGrid {
@@ -139,6 +129,9 @@ header {
     >div {
         margin-bottom: 10px;
         height: 300px;
+
+
+        &:hover {}
 
         img {
             height: 100%;
@@ -158,14 +151,20 @@ h2 {
     cursor: pointer;
 }
 
+footer {
+    background: black;
+
+    * {
+        color: white;
+    }
+}
+
 footer .container {
     @include grid(column);
     padding: 20px;
-    background: rgba($color: #000000, $alpha: 0.9);
     font-size: 1.2em;
     color: white;
-
-    margin-top: 50px;
+    background: transparent;
 
     .rights {
         text-align: end;
@@ -174,23 +173,30 @@ footer .container {
     #links {
         font-size: 1.3em;
 
-        &:hover {
-            color: black;
+        a:hover {
+            * {
+                color: coral;
+            }
         }
     }
 
 
 
 }
+
 .mangaTop {
-    margin-top: 15px;
+    margin-top: 20px;
+    padding-top: 10px;
 }
+
 #mangaPage {
+    margin-top: 15px;
+
     .description {
         @include grid(column);
-        grid-template-columns: 1fr 2fr;
-        grid-gap: 30px;
-        margin-bottom: -10px;
+        grid-template-columns: 20px 1fr 2fr;
+        grid-gap: 10px;
+
     }
 
     .poster {
@@ -200,16 +206,18 @@ footer .container {
             width: 100%;
         }
 
-        // background: rgba($color: #000000, $alpha: 0.7);
-        // text-align: center;
     }
 
 
 
     .info {
+        position: relative;
+        margin-left: 50px;
+
         h2 {
             margin-left: 0;
         }
+
 
         .readBtn {
             background-color: sandybrown;
@@ -220,16 +228,20 @@ footer .container {
             margin-bottom: 10px;
         }
 
-        .readBtnSince {}
+
 
     }
 
     .about {
+        position: relative;
         margin: 0 10px;
+        padding-bottom: 10px;
     }
 }
 
 .news {
+    margin-top: -19px;
+    margin-bottom: 25px;
 
     .newsBlock {
         display: grid;
@@ -240,7 +252,7 @@ footer .container {
         grid-template-rows: repeat(2, 1fr);
 
 
-        > div {
+        >div {
             padding: 3px;
             border: solid 5px rgba($color: silver, $alpha: 0.5);
 
@@ -249,9 +261,10 @@ footer .container {
             }
 
             &:hover {
+                background: rgba($color: white, $alpha: 1);
                 color: #457dd1;
                 cursor: pointer;
-                border: solid 5px rgba($color: #457dd1, $alpha: 0.5);    
+                border: solid 5px rgba($color: #457dd1, $alpha: 0.5);
             }
         }
     }
@@ -270,10 +283,10 @@ footer .container {
     .newDateAuthor {
         font-size: 0.8em;
         color: black;
-        
+
         a {
             color: orange;
-            
+
             &:hover {
                 color: #d96464;
             }
@@ -283,10 +296,119 @@ footer .container {
     .shareIn {
         color: black;
         list-style: none;
+
         li {
             float: left;
             margin-right: 4px;
         }
 
     }
+}
+
+.witch1 {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    width: 200px;
+
+}
+
+.modal {
+    /* Не обязательно  block */
+    display: block;
+    overflow: hidden;
+
+    width: 600px;
+    max-width: 100%;
+
+    height: 400px;
+    max-height: 100%;
+
+    position: fixed;
+
+    z-index: 100;
+
+    left: 50%;
+    top: 50%;
+
+    /* Центруем */
+    transform: translate(-50%, -50%);
+    
+
+    color: #FF6201;
+    background: transparent;
+    box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+}
+
+.closed {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+
+    background: url('./../img/modalBG.jpg');
+}
+
+.modal-guts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 20px 50px 20px 20px;
+    // transform: rotate(10deg);
+
+    h1 {
+        position: absolute;
+        font-family: Zombie;
+        width: 100%;
+        font-size: 4em;
+        bottom: 40px;
+        left: 10px;
+        z-index: 99;
+        transform: rotate(20deg);
+    }
+
+    .uraraChan {
+        position: absolute;
+        right: 55px;
+        transform: rotate(0deg);
+        bottom: 0px;
+        height: 400px;
+    }
+
+    .modalWitch {
+        position: absolute;
+        
+        left: 15px;
+        top: 50px;
+        width: 300px;
+    }
+}
+
+.modal .close-button {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 20px;
+
+    border: 0;
+    color: black;
+    padding: 5px 10px;
+    font-size: 1.3rem;
+}
+
+.open-button {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    
 }
